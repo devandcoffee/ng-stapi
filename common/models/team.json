@@ -1,5 +1,5 @@
 {
-  "name": "Tournament",
+  "name": "Team",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -10,27 +10,17 @@
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "string"
-    },
-    "start_date": {
-      "type": "date",
-      "required": true
-    },
-    "amount_teams": {
-      "type": "number",
-      "required": true
-    },
-    "tournamentTypeId": {
-      "type": "string"
+    "statusId": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],
   "relations": {
-    "tournamentType": {
+    "status": {
       "type": "belongsTo",
-      "model": "TournamentType",
-      "foreignKey": "tournamentTypeId"
+      "model": "Status",
+      "foreignKey": "statusId"
     }
   },
   "acls": [
